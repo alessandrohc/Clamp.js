@@ -50,10 +50,13 @@
          * @returns {number}
          */
         function computeStyle(elem, prop) {
-            if (!win.getComputedStyle) {
-                win.getComputedStyle = function(el, pseudo) {
+            var getComputedStyle;
+            if (win.getComputedStyle) {
+                getComputedStyle = win.getComputedStyle;
+            } else {
+                getComputedStyle = function (el, pseudo) {
                     this.el = el;
-                    this.getPropertyValue = function(prop) {
+                    this.getPropertyValue = function (prop) {
                         var re = /(\-([a-z]){1})/g;
                         if (prop == 'float') prop = 'styleFloat';
                         if (re.test(prop)) {
@@ -67,7 +70,7 @@
                 }
             }
 
-            return win.getComputedStyle(elem, null).getPropertyValue(prop);
+            return getComputedStyle(elem, null).getPropertyValue(prop);
         }
 
         /**

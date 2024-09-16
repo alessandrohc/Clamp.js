@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Clamp.js Example 1</title>
+</head>
+<body>
+    <style>
+        body {
+            width: 300px;
+        }
+    </style>
+    <h2>Header</h2>
+    <h3>Curabitur magna lectus, cursus at euismod sed, aliquet a lectus. Vivamus ac magna purus, in eleifend eros. Vivamus ac magna purus, in eleifend eros.</h3>
+    <hr>
+    <h2>Paragraph</h2>
+    <div>
+<p><span style='color: rgb(65, 65, 65); font-family: "Fira Sans", "Helvetica Neue", "Apple Color Emoji", sans-serif; font-size: 16px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;'>Com texto sem quebra de linha&nbsp;</span><a class="fr-file" data-elfinder="1" data-elfinder-media-hash="fcc7fa02a4e0b011eaa8f8001c4221b96f_f075d403ce0b111eaa8f8001c4221b96f" data-elfinder-media-path="files/fcc7fa02a4e0b011eaa8f8001c4221b96f/f075d403ce0b111eaa8f8001c4221b96f/alessandro.docx" href="/media/files/fcc7fa02a4e0b011eaa8f8001c4221b96f/f075d403ce0b111eaa8f8001c4221b96f/alessandro.docx" target="_blank">Alessandro.docx</a><a class="fr-file" data-elfinder="1" data-elfinder-media-hash="fcc7fa02a4e0b011eaa8f8001c4221b96f_f08dcb91ae0b111eaa8f8001c4221b96f" data-elfinder-media-path="files/fcc7fa02a4e0b011eaa8f8001c4221b96f/f08dcb91ae0b111eaa8f8001c4221b96f/alessandro.pdf" href="/media/files/fcc7fa02a4e0b011eaa8f8001c4221b96f/f08dcb91ae0b111eaa8f8001c4221b96f/alessandro.pdf" target="_blank">Alessandro.pdf</a><a class="fr-file" data-elfinder="1" data-elfinder-media-hash="fcc7fa02a4e0b011eaa8f8001c4221b96f_f0a22d066e0b111eaa8f8001c4221b96f" data-elfinder-media-path="files/fcc7fa02a4e0b011eaa8f8001c4221b96f/f0a22d066e0b111eaa8f8001c4221b96f/alessandro.txt" href="/media/files/fcc7fa02a4e0b011eaa8f8001c4221b96f/f0a22d066e0b111eaa8f8001c4221b96f/alessandro.txt" target="_blank">alessandro.txt</a> com texto sem quebra de linha</p>
+
+<p>
+    <br>
+</p>
+
+<p>
+    <br>
+</p>
+    </div>
+    <script src="../clamp.js"></script>
+    <script>
+        var header = document.getElementsByTagName('body')[0].getElementsByTagName('h3')[0],
+            paragraph = document.getElementsByTagName('body')[0].getElementsByTagName('div')[0];
+
+        $clamp(header, {clamp: 1, useNativeClamp: false});
+        $clamp(paragraph, {clamp: 2, useNativeClamp: false, animate: true});
+    </script>
+</body>
+</html>
